@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://kwlhqjn32u23"]
+
+[ext_resource type="Script" uid="uid://btpyndb4j6dsy" path="res://fase_1.gd" id="1_8dnef"]
+[ext_resource type="Texture2D" uid="uid://bme6asuwp2cx0" path="res://icon.svg" id="2_ugoy3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u5pyp"]
+radius = 200.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_u7fro"]
+
+[node name="fase1" type="Node2D"]
+script = ExtResource("1_8dnef")
+
+[node name="enemy" type="Area2D" parent="."]
+position = Vector2(527, 261)
+
+[node name="sprite" type="Sprite2D" parent="enemy"]
+texture = ExtResource("2_ugoy3")
+
+[node name="shape" type="CollisionShape2D" parent="enemy"]
+shape = SubResource("CircleShape2D_u5pyp")
+
+[node name="label" type="Label" parent="."]
+offset_left = 504.0
+offset_top = 110.0
+offset_right = 546.0
+offset_bottom = 136.0
+text = "teste"
+label_settings = SubResource("LabelSettings_u7fro")

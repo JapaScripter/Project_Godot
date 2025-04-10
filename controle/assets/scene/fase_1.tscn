@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnku5whm4eqov"]
+
+[ext_resource type="PackedScene" uid="uid://yivxcu2ok157" path="res://assets/scene/bola.tscn" id="1_b3sw0"]
+[ext_resource type="Script" uid="uid://bchkbwdx6x347" path="res://scripts/fase_1.gd" id="1_i36j4"]
+[ext_resource type="PackedScene" uid="uid://dstynyx7uu75m" path="res://assets/scene/chao.tscn" id="2_i36j4"]
+[ext_resource type="PackedScene" uid="uid://dcpr3v2pugnpd" path="res://assets/scene/coin.tscn" id="4_qpm1p"]
+
+[node name="fase1" type="Node2D"]
+script = ExtResource("1_i36j4")
+
+[node name="bola" parent="." instance=ExtResource("1_b3sw0")]
+z_index = 1
+position = Vector2(528, 43)
+
+[node name="plataforma" type="Node2D" parent="."]
+
+[node name="chao" parent="plataforma" instance=ExtResource("2_i36j4")]
+position = Vector2(535, 324)
+
+[node name="TileMap" type="TileMap" parent="plataforma"]
+format = 2
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+
+[node name="coin" parent="." instance=ExtResource("4_qpm1p")]
+position = Vector2(531, 179)

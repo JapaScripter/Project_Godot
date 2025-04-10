@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dstynyx7uu75m"]
+
+[ext_resource type="Texture2D" uid="uid://gpl0xe384ay2" path="res://assets/sprite_pack1/grama.png" id="1_u8ix6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tk3ak"]
+size = Vector2(100, 88)
+
+[node name="chao" type="StaticBody2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_u8ix6")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_tk3ak")
