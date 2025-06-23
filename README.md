@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://godotengine.org/themes/godotengine/assets/logo_white.svg" alt="Logo da Godot" width="200"/>
+  <img src="assets/images/Senac.png" alt="Logo do Senac" width="200"/>
 </p>
 
 <h1 align="center">Aprendendo Godot - Motor de Jogos Open Source</h1>
