@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://b54dvdvmyryur"]
+
+[ext_resource type="PackedScene" uid="uid://cy3ahwa2u7y0d" path="res://scenes/player.tscn" id="1_uwrxv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cj0n"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Chao" type="StaticBody2D" parent="."]
+position = Vector2(600, 600)
+
+[node name="Collision" type="CollisionShape2D" parent="Chao"]
+scale = Vector2(60, 5)
+shape = SubResource("RectangleShape2D_8cj0n")
+debug_color = Color(0, 0.6, 0, 0.419608)
+
+[node name="Collision2" type="CollisionShape2D" parent="Chao"]
+position = Vector2(191, -154)
+scale = Vector2(10, 5)
+shape = SubResource("RectangleShape2D_8cj0n")
+debug_color = Color(0, 0.6, 0, 0.419608)
+
+[node name="Collision3" type="CollisionShape2D" parent="Chao"]
+position = Vector2(396, -285)
+scale = Vector2(10, 5)
+shape = SubResource("RectangleShape2D_8cj0n")
+debug_color = Color(0, 0.6, 0, 0.419608)
+
+[node name="Player" parent="Chao" instance=ExtResource("1_uwrxv")]
+position = Vector2(-312, -113)

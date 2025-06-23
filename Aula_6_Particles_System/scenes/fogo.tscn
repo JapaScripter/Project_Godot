@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpm8kae6wjanc"]
+
+[ext_resource type="Script" uid="uid://d1gjwh7kt64ge" path="res://scripts/fogo.gd" id="1_ribnb"]
+
+[sub_resource type="Gradient" id="Gradient_qyc5o"]
+offsets = PackedFloat32Array(0, 0.351351, 0.630631, 1)
+colors = PackedColorArray(1, 1, 0, 1, 1, 0.647059, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_ribnb"]
+offsets = PackedFloat32Array(0, 0.234234, 0.396396, 0.585586)
+colors = PackedColorArray(1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1)
+
+[node name="fogo" type="Node2D"]
+script = ExtResource("1_ribnb")
+
+[node name="CpuP" type="CPUParticles2D" parent="."]
+amount = 10000
+lifetime = 0.7
+emission_shape = 1
+emission_sphere_radius = 20.0
+gravity = Vector2(0, -300)
+radial_accel_min = -50.0
+radial_accel_max = -20.0
+color_ramp = SubResource("Gradient_qyc5o")
+
+[node name="CpuCentelha" type="CPUParticles2D" parent="."]
+amount = 20
+emission_shape = 3
+emission_rect_extents = Vector2(20, 1)
+direction = Vector2(50, 50)
+spread = 180.0
+gravity = Vector2(0, -400)
+color_ramp = SubResource("Gradient_ribnb")
+
+[node name="Camera" type="Camera2D" parent="."]

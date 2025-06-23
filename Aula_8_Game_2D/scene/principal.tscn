@@ -1,0 +1,156 @@
+[gd_scene load_steps=13 format=4 uid="uid://i5dcmayspylx"]
+
+[ext_resource type="Texture2D" uid="uid://bwv6bsx2oa4kq" path="res://assets/assets_itens/tileset/tileset_cenario.png" id="1_4ut7t"]
+[ext_resource type="PackedScene" uid="uid://bk0tjxcd1whw5" path="res://scene/player.tscn" id="2_8rao1"]
+[ext_resource type="Texture2D" uid="uid://bpgfans8dow3u" path="res://assets/assets_itens/tileset/tileset_fundo.png" id="3_61cxg"]
+[ext_resource type="Texture2D" uid="uid://dkr2m2o3s5ypm" path="res://assets/assets_itens/sprites/lua.png" id="4_0o8gq"]
+[ext_resource type="PackedScene" uid="uid://5b4bbq0ytxyx" path="res://scene/item.tscn" id="5_6y2rv"]
+[ext_resource type="Script" uid="uid://t2647oefkjac" path="res://script/hud.gd" id="6_6716u"]
+[ext_resource type="Script" uid="uid://b7hv7y4uvqruf" path="res://script/dead_zone.gd" id="7_fpmog"]
+[ext_resource type="PackedScene" uid="uid://drqr7w5ybo3n4" path="res://scene/enemy.tscn" id="8_kcyt3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8rao1"]
+texture = ExtResource("1_4ut7t")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -128, 256, -128, 256, 192, 64, 176)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(256, -128, 256, 160, 16, 192, -256, 144, -256, -128)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -128, -32, -128, -64, 176, -256, 192)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(80, -256, 256, -256, 256, 112, 224, 160, 192, 144, 176, 160, 160, 144, 96, 176, 64, 160, 96, 80, 48, 80, 48, 32, 96, 16, 48, 16, 48, 0, 64, -16, 48, -48, 48, -80, 64, -112, 32, -144, 16, -192, 48, -224, 80, -208, 64, -240)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(256, -256, 256, 160, 16, 192, -256, 144, -256, -256)
+5:0/0 = 0
+6:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_61cxg"]
+tile_size = Vector2i(512, 512)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 6
+sources/1 = SubResource("TileSetAtlasSource_8rao1")
+
+[sub_resource type="LabelSettings" id="LabelSettings_6y2rv"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_fpmog"]
+font_size = 30
+
+[node name="Principal" type="Node2D"]
+
+[node name="TileMap" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//wAAAQABAAAAAAAAAAAAAQABAAAAAAD+/wAAAQABAAAAAAABAAAAAQABAAAAAAD9/wAAAQABAAAAAAD8/wAAAQABAAAAAAADAAAAAQABAAAAAAD7/wAAAQABAAAAAAAEAAAAAQABAAAAAAAEAP//AQAAAAAAAAD7////AQACAAAAAAAFAP//AQABAAAAAAAGAP//AQABAAAAAAAHAP//AQABAAAAAAD6////AQABAAAAAAD5////AQABAAAAAAD4////AQABAAAAAAAHAP7/AQAEAAAAAAAHAP3/AQAEAAAAAAD3//3/AQAEAAAAAAD3//z/AQADAAAAAAD4//z/AQAEAAAAAAD5//z/AQAEAAAAAAD6//z/AQAEAAAAAAD7//z/AQAEAAAAAAD8//z/AQAEAAAAAAD9//z/AQAEAAAAAAD+//z/AQAEAAAAAAAAAPz/AQAEAAAAAAD///z/AQAEAAAAAAABAPz/AQAEAAAAAAACAPz/AQAEAAAAAAADAPz/AQAEAAAAAAAEAPz/AQAEAAAAAAAFAPz/AQAEAAAAAAD3////AQABAAAAAAD2////AQABAAAAAAAIAP//AQABAAAAAAAJAP//AQABAAAAAAAGAPz/AQAEAAAAAAD3//7/AQAEAAAAAAD6/wAAAQAAAAAAAAAFAAAAAQACAAAAAAAGAAAAAQAEAAAAAAD5/wAAAQAEAAAAAAD4/wAAAQAEAAAAAAAHAAAAAQAEAAAAAAD2//7/AQAEAAAAAAD1//7/AQAEAAAAAAD1//3/AQAEAAAAAAD2//3/AQAEAAAAAAAIAP3/AQAEAAAAAAAIAP7/AQAEAAAAAAAJAP7/AQAEAAAAAAAJAP3/AQAEAAAAAAAGAP7/AQADAAAAAAAGAP3/AQADAAAAAAACAAAAAQABAAAAAAA=")
+tile_set = SubResource("TileSet_61cxg")
+
+[node name="Player" parent="." instance=ExtResource("2_8rao1")]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
+offset = Vector2(0, 200)
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 200)
+
+[node name="Parallax1" type="Parallax2D" parent="ParallaxBackground"]
+scroll_scale = Vector2(1.5, 1.5)
+repeat_size = Vector2(1536, 0)
+repeat_times = 100
+
+[node name="Sprite" type="Sprite2D" parent="ParallaxBackground/Parallax1"]
+position = Vector2(-12, -60)
+scale = Vector2(1.19601, 1.74756)
+texture = ExtResource("3_61cxg")
+hframes = 3
+frame = 1
+
+[node name="Parallax2" type="Parallax2D" parent="ParallaxBackground/Parallax1"]
+scroll_scale = Vector2(1.5, 1.5)
+repeat_size = Vector2(1536, 0)
+repeat_times = 100
+
+[node name="Sprite" type="Sprite2D" parent="ParallaxBackground/Parallax1/Parallax2"]
+position = Vector2(-12, -500)
+scale = Vector2(1.19601, 1.74756)
+texture = ExtResource("3_61cxg")
+hframes = 3
+frame = 2
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="layer1" type="Parallax2D" parent="ParallaxBackground2"]
+scroll_scale = Vector2(1.1, 1)
+
+[node name="sprite" type="Sprite2D" parent="ParallaxBackground2/layer1"]
+texture = ExtResource("4_0o8gq")
+
+[node name="layer2" type="Parallax2D" parent="ParallaxBackground2"]
+scroll_scale = Vector2(1.2, 1.2)
+scroll_offset = Vector2(0, 200)
+repeat_size = Vector2(1536, 0)
+repeat_times = 4
+
+[node name="sprite" type="Sprite2D" parent="ParallaxBackground2/layer2"]
+texture = ExtResource("3_61cxg")
+hframes = 3
+
+[node name="layer3" type="Parallax2D" parent="ParallaxBackground2"]
+scroll_scale = Vector2(1.4, 1.4)
+repeat_size = Vector2(1536, 0)
+repeat_times = 4
+
+[node name="sprite" type="Sprite2D" parent="ParallaxBackground2/layer3"]
+texture = ExtResource("3_61cxg")
+hframes = 3
+frame = 1
+
+[node name="layer4" type="Parallax2D" parent="ParallaxBackground2"]
+scroll_scale = Vector2(1.6, 1.6)
+scroll_offset = Vector2(0, 150)
+repeat_size = Vector2(1536, 0)
+repeat_times = 4
+
+[node name="sprite" type="Sprite2D" parent="ParallaxBackground2/layer4"]
+texture = ExtResource("3_61cxg")
+hframes = 3
+frame = 2
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Item" parent="Items" instance=ExtResource("5_6y2rv")]
+position = Vector2(512, 93)
+
+[node name="Item2" parent="Items" instance=ExtResource("5_6y2rv")]
+position = Vector2(648, 31)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("6_6716u")
+
+[node name="score" type="Label" parent="HUD"]
+offset_left = 41.0
+offset_top = 35.0
+offset_right = 121.0
+offset_bottom = 77.0
+text = "Score"
+label_settings = SubResource("LabelSettings_6y2rv")
+metadata/_edit_use_anchors_ = true
+
+[node name="life" type="Label" parent="HUD"]
+offset_left = 42.0
+offset_top = 82.0
+offset_right = 82.0
+offset_bottom = 105.0
+text = "Life:"
+label_settings = SubResource("LabelSettings_fpmog")
+
+[node name="DeadZone" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("7_fpmog")
+
+[node name="CollisionPolygon" type="CollisionPolygon2D" parent="DeadZone"]
+polygon = PackedVector2Array(-6453, 972, -6413, 382, 7732, 356, 7876, 985)
+
+[node name="enemy" parent="." instance=ExtResource("8_kcyt3")]
+position = Vector2(1529, 17)
+
+[connection signal="body_entered" from="DeadZone" to="DeadZone" method="_on_body_entered"]

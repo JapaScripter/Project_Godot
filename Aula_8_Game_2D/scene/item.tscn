@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://5b4bbq0ytxyx"]
+
+[ext_resource type="Texture2D" uid="uid://dvl71cv31dyfi" path="res://assets/assets_itens/sprites/cristal.png" id="1_4w2rt"]
+[ext_resource type="Script" uid="uid://dyopca30eghk7" path="res://script/item.gd" id="1_akoh1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_akoh1"]
+radius = 18.0
+height = 60.0
+
+[node name="Item" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_akoh1")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_4w2rt")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_akoh1")

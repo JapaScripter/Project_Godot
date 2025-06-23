@@ -1,0 +1,35 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="MS_Mimlachet_Shmim_RPG"
+config/tags=PackedStringArray("games_product")
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://icon.svg"
+
+[input]
+
+walk_right={
+"deadzone": 0.2,
+"events": []
+}
+walk_left={
+"deadzone": 0.2,
+"events": []
+}
+jump_up={
+"deadzone": 0.2,
+"events": []
+}
+squat_down={
+"deadzone": 0.2,
+"events": []
+}

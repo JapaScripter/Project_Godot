@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bugx7ccjqhxod"]
+
+[ext_resource type="Texture2D" uid="uid://bwv6bsx2oa4kq" path="res://assets/assets_itens/tileset/tileset_cenario.png" id="1_hrdv4"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hrdv4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_coji3"]
+texture = ExtResource("1_hrdv4")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_llcwx"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_hrdv4")
+sources/1 = SubResource("TileSetAtlasSource_coji3")
+
+[node name="fase2" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_llcwx")

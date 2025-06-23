@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bks7dmgfqa8uh"]
+
+[ext_resource type="Script" uid="uid://crbsuhtnr1t4k" path="res://scripts/nave.gd" id="1_ksdb5"]
+[ext_resource type="Texture2D" uid="uid://dadvdnbfu06f4" path="res://assets/assets/sprite_pack5/recortes/nave1.png" id="1_osuy8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ksdb5"]
+size = Vector2(65, 45)
+
+[node name="Nave" type="Area2D"]
+position = Vector2(571, 309)
+collision_mask = 2
+script = ExtResource("1_ksdb5")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ksdb5")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_osuy8")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://idryc1xqh1pj"]
+
+[ext_resource type="Script" uid="uid://dntlxdsncyvpd" path="res://script/color_rect.gd" id="1_mxsg8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r7xv0"]
+font_size = 30
+font_color = Color(1, 0, 0.0117647, 1)
+
+[node name="ColorRect" type="ColorRect"]
+offset_right = 1150.0
+offset_bottom = 645.0
+color = Color(0, 0.0196078, 0.0196078, 1)
+script = ExtResource("1_mxsg8")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 646.0
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_r7xv0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 478.0
+offset_top = 371.0
+offset_right = 676.0
+offset_bottom = 508.0
+text = "PRESS ENTER TO RESTART"

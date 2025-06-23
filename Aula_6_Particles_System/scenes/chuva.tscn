@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bqvon81rvsotr"]
+
+[node name="chuva" type="Node2D"]
+
+[node name="CpuP" type="CPUParticles2D" parent="."]
+position = Vector2(0, -350)
+amount = 500
+lifetime = 1.5
+emission_shape = 3
+emission_rect_extents = Vector2(800, 1)
+gravity = Vector2(-400, 980)
+scale_amount_max = 3.0
+color = Color(0, 1, 1, 1)
+
+[node name="Camera" type="Camera2D" parent="."]
